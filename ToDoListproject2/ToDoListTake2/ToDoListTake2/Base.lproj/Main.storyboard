@@ -38,15 +38,48 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="qLb-O5-94D" kind="show" identifier="moveToCompletedToDoVC" id="5lU-hD-djY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLq-hK-1Od" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.7971014492755" y="100.44642857142857"/>
+            <point key="canvasLocation" x="1006" y="100"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="ag3-t2-oWg">
+            <objects>
+                <viewController id="qLb-O5-94D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ASp-Ed-f5a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S7-l4-K8U">
+                                <rect key="frame" x="186" y="240" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-cH-aXd">
+                                <rect key="frame" x="182" y="411" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Op2-Me-0WD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="j00-Hg-ZbT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwC-O6-Xhx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="814"/>
+        </scene>
+        <!--Add To Do View Controller-->
         <scene sceneID="jb8-mU-mBr">
             <objects>
-                <viewController id="kaQ-BL-Xuj" sceneMemberID="viewController">
+                <viewController id="kaQ-BL-Xuj" customClass="AddToDoViewController" customModule="ToDoListTake2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HX1-z3-3VE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +105,9 @@
                                 <rect key="frame" x="187" y="361" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="kaQ-BL-Xuj" eventType="touchUpInside" id="Jhk-F0-Jjl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ve5-rD-kMP">
                                 <rect key="frame" x="186" y="128" width="38" height="21"/>
@@ -85,6 +121,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="jJL-ep-w6f"/>
+                    <connections>
+                        <outlet property="descriptionInput" destination="w8U-6i-2zH" id="CKK-Wh-OXo"/>
+                        <outlet property="switchInput" destination="FJN-mz-qfG" id="Obv-HV-GiN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIf-T8-4T4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
