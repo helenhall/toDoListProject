@@ -81,6 +81,13 @@ class ToDoTableViewController: UITableViewController {
         if let nextAddToDoVC = segue.destination as? AddToDoViewController {
             nextAddToDoVC.previousToDoTVC = self
         }
+        
+        if let nextCompletedToDoVC = segue.destination as? CompletedToDoViewController {
+            if let chosenToDo = sender as? ToDoClass {
+                nextCompletedToDoVC.selectedToDo = chosenToDo
+                nextCompletedToDoVC.previousToDoTVC = self
+            }
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
